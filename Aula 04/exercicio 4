@@ -1,0 +1,16 @@
+def retornaPar(lista1): 
+    new_list = []
+    for i in range(len(lista1)):
+        if i%2 == 0:
+            new_list.append(lista1[i])
+    
+    return new_list
+ #main
+
+lista = []
+entrada_lista = input("Digite uma palavra para ser adicionada na primeira lista (Digite 'sair' se quiser finalizar): ")
+while entrada_lista != 'sair':
+    lista.append(entrada_lista)
+    entrada_lista = input("Digite uma palavra para ser adicionada na lista (Digite 'sair' se quiser finalizar): ")
+
+print(retornaPar(lista))

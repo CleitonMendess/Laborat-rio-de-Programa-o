@@ -1,0 +1,25 @@
+def ordenaAlfabetica(lista1,lista2): 
+    new_list = []
+    menor_lista = lista1 if len(lista1) < len(lista2) else lista2
+    maior_lista = lista1 if len(lista1) > len(lista2) else lista2
+    for i in range(len(menor_lista)):
+        new_list.append(lista1[i])
+        new_list.append(lista2[i])
+    new_list.extend(maior_lista[i+1:])
+    return new_list
+
+#main
+
+
+lista1 = []
+lista2 = []
+entrada_lista = input("Digite uma palavra para ser adicionada na primeira lista (Digite 'sair' se quiser finalizar): ")
+while entrada_lista != 'sair':
+    lista1.append(entrada_lista)
+    entrada_lista = input("Digite uma palavra para ser adicionada na lista (Digite 'sair' se quiser finalizar): ")
+entrada_lista = input("Digite uma palavra para ser adicionada na segunda lista (Digite 'sair' se quiser finalizar): ")
+while entrada_lista != 'sair':
+    lista2.append(entrada_lista)
+    entrada_lista = input("Digite uma palavra para ser adicionada na lista (Digite 'sair' se quiser finalizar): ")
+
+print(ordenaAlfabetica(lista1,lista2))

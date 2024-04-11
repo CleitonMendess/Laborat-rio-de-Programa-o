@@ -1,0 +1,74 @@
+# Cardápio do food truck
+cardapio = [
+    ['Cachorro-quente', 5.00],
+    ['X-Salada', 10.00],
+    ['X-Bacon', 12.00],
+    ['Bauru', 8.00],
+    ['Refrigerante', 4.00],
+    ['Suco', 6.00]
+]
+
+# Função para imprimir o cardápio
+def imprimir_cardapio(cardapio):
+    print("-----Cardápio-----")
+    for codigo, item in enumerate(cardapio):
+        print(f"{codigo} - {item[0]} - R$ {item[1]}")
+
+# Função para calcular o valor do pedido
+def calcular_pedido(codigo, quantidade, cardapio):
+    if codigo >= 0 and codigo < len(cardapio):
+        nome_produto = cardapio[codigo][0]
+        valor_produto = cardapio[codigo][1]
+        valor_pedido = valor_produto * quantidade
+        print(f"{nome_produto} - R$ {valor_pedido}")
+    else:
+        print("Código do produto inválido!")
+
+# Função principal
+def main():
+    imprimir_cardapio(cardapio)
+
+    pedidos = []
+    fechar_conta = False
+
+    while not fechar_conta:
+        codigo = int(input("Código do produto: "))
+        quantidade = int(input("Quantidade: "))
+
+        calcular_pedido(codigo, quantidade, cardapio)
+
+        resposta = input("Fechar a conta [s ou n]? ").lower()
+        if resposta == 's':
+            fechar_conta = True
+
+    total_conta = sum(pedido[1] for pedido in pedidos)
+    print(f"Valor da conta: {total_conta}")
+
+if __name__ == "__main__":
+    main()
+
+
+if __name__ == "__main__":
+    main()
+
+def main():
+    imprimir_cardapio(cardapio)
+
+    pedidos = []
+    fechar_conta = False
+
+    while not fechar_conta:
+        codigo = int(input("Código do produto: "))
+        quantidade = int(input("Quantidade: "))
+
+        calcular_pedido(codigo, quantidade, cardapio)
+
+        resposta = input("Fechar a conta [s ou n]? ").lower()
+        if resposta == 's':
+            fechar_conta = True
+
+    total_conta = sum(pedido[1] for pedido in pedidos)
+    print(f"Valor da conta: {total_conta}")
+
+if __name__ == "__main__":
+    main()

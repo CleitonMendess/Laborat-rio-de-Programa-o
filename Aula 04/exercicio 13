@@ -1,0 +1,15 @@
+import random
+
+
+def repeteOuNao(numero):
+    
+    return [ random.randint(1, numero) for i in range(numero)]
+
+#MAIN from func import *
+
+lista = []
+i=0
+numero_de_ramdons = int(input("Digite um número inteiro:  "))
+
+
+print(repeteOuNao(numero_de_ramdons))

@@ -1,0 +1,17 @@
+#func
+def ordenaCaracter(lista): 
+    new_list = []
+    for i in range(len(lista)):
+        lista[i] = [len(lista[i]),lista[i]]
+    lista.sort()
+    new_list = [lista[i][1] for i in range(len(lista))]
+    return new_list
+
+#main
+
+lista = []
+entrada_lista = input("Digite uma palavra para ser adicionada na lista (Digite 'sair' se quiser finalizar): ")
+while entrada_lista != 'sair':
+    lista.append(entrada_lista)
+    entrada_lista = input("Digite uma palavra para ser adicionada na lista (Digite 'sair' se quiser finalizar): ")
+print(ordenaCaracter(lista))

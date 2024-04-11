@@ -1,0 +1,49 @@
+def calcular_resultado(despesa, valor_passagem, qtd_passageiros):
+    receita = valor_passagem * qtd_passageiros
+    lucro = receita - despesa
+
+    if lucro > 0:
+        return "Houve lucro"
+    elif lucro < 0:
+        return "Houve prejuízo"
+    else:
+        return "A viagem se pagou"
+
+def main():
+    qtd_viagens_a = 0
+    qtd_passageiros_b = 0
+    max_passageiros = 0
+    max_passageiros_bus = ''
+
+    while True:
+        identificacao_onibus = input("Identificação do ônibus (A, B ou C) ou X para sair: ").upper()
+
+        if identificacao_onibus == 'X':
+            break
+
+        data_viagem = input("Data da viagem (dd/mm/aa): ")
+        qtd_passageiros = int(input("Quantidade de passageiros: "))
+        valor_passagem = float(input("Valor da passagem: "))
+        despesa = float(input("Despesa com a viagem: "))
+
+        resultado = calcular_resultado(despesa, valor_passagem, qtd_passageiros)
+
+        print("Ônibus:", identificacao_onibus)
+        print("Data:", data_viagem)
+        print("Resultado:", resultado)
+
+        if identificacao_onibus == 'A':
+            qtd_viagens_a += 1
+        elif identificacao_onibus == 'B' and data_viagem == '23/12/22':
+            qtd_passageiros_b += qtd_passageiros
+
+        if qtd_passageiros > max_passageiros:
+            max_passageiros = qtd_passageiros
+            max_passageiros_bus = identificacao_onibus
+
+    print("Quantidade de viagens realizadas pelo ônibus A:", qtd_viagens_a)
+    print("Quantidade de pessoas que viajou no ônibus B no dia 23/12/22:", qtd_passageiros_b)
+    print("Identificação do ônibus que transportou a maior quantidade de pessoas em uma viagem:", max_passageiros_bus)
+
+if __name__ == "__main__":
+    main()
